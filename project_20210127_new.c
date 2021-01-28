@@ -57,12 +57,7 @@ void menu(void){
         "to quit order press 4!\n");
 
     scanf("%d",&choice);
-    while(choice<1||choice>4){
-        if(isalpha(choice)){
-            printf("test\n");
-        } else {
-            printf("test no\n");
-        }
+    while((choice<1||choice>4) && isalpha(choice)){
         printf("Please choose one of the above options\n");
         fflush(stdin);
         scanf("%d",&choice);
