@@ -62,8 +62,8 @@ void menu(void){
     scanf("%d",&choice);
     while(choice<1||choice>4){
         printf("Please choose one of the above options\n");
-        scanf("%d",&choice);
         fflush(stdin);
+        scanf("%d",&choice);
     }
 
     roomOptions(choice);
@@ -117,16 +117,16 @@ void getNights(int *Rooms,int *Nights){
 
     do{
         printf("How many rooms would you like?(Up to 200): ");
-        scanf("%d",&addRooms);
         fflush(stdin);
+        scanf("%d",&addRooms);
     }while(addRooms<0);
 
     *Rooms+=addRooms;
 
     do{
         printf("How many nights would you like to stay?(Up to 1095): ");
-        scanf("%d",&addNights);
         fflush(stdin);
+        scanf("%d",&addNights);
     }while(addNights<0);
 
     *Nights+=addRooms*addNights;
@@ -235,8 +235,8 @@ void extraGift(char cSwitch){
 
     while(choice<1||choice>n){
         printf("Please choose a valid number\n");
-        scanf("%d",&choice);
         fflush(stdin);
+        scanf("%d",&choice);
     }
 
     cChosenDiscount=(n*2)+choice;
