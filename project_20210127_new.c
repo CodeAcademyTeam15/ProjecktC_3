@@ -63,6 +63,7 @@ void menu(void){
     while(choice<1||choice>4){
         printf("Please choose one of the above options\n");
         scanf("%d",&choice);
+        fflush(stdin);
     }
 
     roomOptions(choice);
@@ -82,10 +83,10 @@ void roomOptions(int choice){
             break;
         case 4:
             printf("Have a nice day!\n");
-            break;
+            return;
         default:
             printf("Ooops something went wrong please try again!\n");
-            break;
+            return;
     }
 
     printCur();
@@ -105,7 +106,7 @@ void roomOptions(int choice){
             break;
         default:
             printf("Have a nice day!\n");
-            break;
+            return;
     }
 
 }
@@ -117,6 +118,7 @@ void getNights(int *Rooms,int *Nights){
     do{
         printf("How many rooms would you like?(Up to 200): ");
         scanf("%d",&addRooms);
+        fflush(stdin);
     }while(addRooms<0);
 
     *Rooms+=addRooms;
@@ -124,6 +126,7 @@ void getNights(int *Rooms,int *Nights){
     do{
         printf("How many nights would you like to stay?(Up to 1095): ");
         scanf("%d",&addNights);
+        fflush(stdin);
     }while(addNights<0);
 
     *Nights+=addRooms*addNights;
@@ -143,9 +146,7 @@ void printCur(){
 double calculateTotalWithTF(void){
     double cost=0;
 
-    cost += dPriceStandart*iNumOfStandardNights;
-    cost += dPriceLux*iNumOfLuxNights;
-    cost*=dTouristFee;
+    cost=calculateTotalWithoutTF()*dTouristFee;
 
     return cost;
 }
@@ -189,7 +190,7 @@ void printOrder(void){
             break;
         case 7:
             totalPrice*=dDiscountTwenty;
-            printf("You have chosen a bonus: 200%% extra discount\n");
+            printf("You have chosen a bonus: 20%% extra discount\n");
             break;
         case 8:
             printf("You have chosen a bonus: Spa for 200\n");
@@ -235,6 +236,7 @@ void extraGift(char cSwitch){
     while(choice<1||choice>n){
         printf("Please choose a valid number\n");
         scanf("%d",&choice);
+        fflush(stdin);
     }
 
     cChosenDiscount=(n*2)+choice;
