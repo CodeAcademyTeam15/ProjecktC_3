@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 const double dPriceStandart = 120.00F;
 const double dPriceLux = 180.00F;
